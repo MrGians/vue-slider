@@ -51,10 +51,16 @@ const carousel = new Vue ({
     ]
   },
   computed: {
- 
   },
   methods: {
-
+    showPrev(){
+      this.currentActiveIndex--;
+      if (this.currentActiveIndex < 0) this.currentActiveIndex = this.images.length - 1;
+    },
+    showNext(){
+      this.currentActiveIndex++;
+      if (this.currentActiveIndex === this.images.length) this.currentActiveIndex = 0;
+    }
   },
 });
 

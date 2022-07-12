@@ -23,7 +23,7 @@
             <!-- Carosello JS -->
             <section id="carousel">
                 <!-- Prevoius Button -->
-                <i class="bi bi-arrow-left-square-fill" id="prev"></i>
+                <i @click="showPrev" class="bi bi-arrow-left-square-fill" id="prev"></i>
                 <!-- Gallery with Main Images -->
                 <div id="gallery">
                     <div v-for="(image, i) in images" :class="{'active' : currentActiveIndex === i}" class="gallery-element">
@@ -39,7 +39,7 @@
                     <img v-for="(image, i) in images" :class="{'active' : currentActiveIndex === i}" :src="image['url']" :alt="image['title']">
                 </div>
                 <!-- Next Button -->
-                <i class="bi bi-arrow-right-square-fill" id="next"></i>
+                <i @click="showNext" class="bi bi-arrow-right-square-fill" id="next"></i>
             </section>
         </div>
     </main>
