@@ -36,7 +36,7 @@
                 </div>
                 <!-- Thumb-box with Thumbnail Images -->
                 <div id="thumb-box">
-                    <img v-for="(image, i) in images" :class="{'active' : currentActiveIndex === i}" :src="image['url']" :alt="image['title']">
+                    <img v-for="(image, i) in images" @click="changeCurrentActive(i)" :class="{'active' : currentActiveIndex === i}" :src="image['url']" :alt="image['title']">
                 </div>
                 <!-- Next Button -->
                 <i @click="showNext" class="bi bi-arrow-right-square-fill" id="next"></i>

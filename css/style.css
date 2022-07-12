@@ -46,6 +46,7 @@
   width: calc(100% / 5);
   object-fit: cover;
   filter: grayscale(1);
+  cursor: pointer;
 }
 
 #thumb-box img.active {filter: grayscale(0);}
