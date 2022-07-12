@@ -26,7 +26,7 @@
                 <i @click="showPrev" class="bi bi-arrow-left-square-fill" id="prev"></i>
                 <!-- Gallery with Main Images -->
                 <div id="gallery">
-                    <div v-for="(image, i) in images" :class="{'active' : currentActiveIndex === i}" class="gallery-element">
+                    <div v-for="(image, i) in images" @mouseleave="autoplay" @mouseover="autoplay(false)" :class="{'active' : currentActiveIndex === i}" class="gallery-element">
                         <img :src="image['url']" :alt="image['title']">
                         <div class="image-content">
                           <h2>{{image["title"]}}</h2>
