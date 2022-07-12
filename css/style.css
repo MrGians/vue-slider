@@ -1,0 +1,88 @@
+/*********** Carousel ***********/
+#carousel {
+  width: 800px;
+  height: 100%;
+  margin: 40px auto;
+  border: 5px solid black;
+  position: relative;
+}
+
+
+/* Carousel Main Gallery */
+#gallery {height: 450px;}
+
+#gallery .gallery-element {
+  height: 100%;
+  display: none;
+}
+
+#gallery .gallery-element.active {display: block;}
+
+#gallery .gallery-element img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#gallery .image-content {
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  right: 1rem;
+  width: 70%;
+  text-align: right;
+  color: white;
+}
+
+
+/* Carousel Thumbnail Box */
+#thumb-box {
+  display: flex;
+  width: 100%;
+}
+
+#thumb-box img {
+  height: 100px;
+  width: calc(100% / 5);
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+#thumb-box img.active {filter: grayscale(0);}
+
+
+/* Carousel Prev & Next Buttons */
+#carousel .bi {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+#carousel #prev {right: 105%;}
+#carousel #next {left: 105%;}
+
+
+/* Carousel Autoplay & Reverse Autoplay Buttons */
+#carousel #autoplay-controls {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#autoplay-controls button {
+  font-size: 1.3rem;
+  color: white;
+  background-color: rgba(26, 26, 26, 0.7);
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 2rem;
+  visibility: hidden;
+}
+
+#carousel:hover #autoplay-controls button {visibility: visible;}
+
+#autoplay-controls button.active {background-color: rgba(32, 178, 64, 0.8);}
