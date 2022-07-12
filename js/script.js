@@ -9,6 +9,7 @@ const carousel = new Vue ({
   el: "#carousel",
   data: {
     currentActiveIndex: 0,
+    isPlaying: true,
     images: [
       {
         url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -58,20 +59,13 @@ const carousel = new Vue ({
     changeCurrentActive(index){
       this.currentActiveIndex = index
     },
-    autoplay(bool){ // Inizia solo dopo essere andato in hover ed uscito almeno una volta
-      isPlaying = bool;
-      const autoplay = setInterval(() => {
-
-      if (!isPlaying) {
-        console.log("STOP")
-        return clearInterval(autoplay)
-      }
-
-      console.log("START AUTOPLAY")
-      return this.showNext();
-      }, 3000)
-      
+    startAutoplay(){ // Inizia solo dopo essere andato in hover ed uscito almeno una volta
+        console.log("START AUTOPLAY");
+        this.isPlaying = setInterval(this.showNext, 3000);
+    },
+    stopAutoplay(){
+        console.log("STOP");
+        clearInterval(this.isPlaying);
     }
   },
 });
-
